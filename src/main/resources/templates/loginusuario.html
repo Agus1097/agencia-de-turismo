@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Iniciar Sesión</title>
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
+                            <link rel="stylesheet" th:href="@{/css/stylelogin.css}">
+                                </head>
+                                <body>
+
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-2"></div>
+                                            <div class="col-lg-6 col-md-8 login-box">
+                                                <div class="col-lg-12 login-key">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16" style="color: azure;">
+                                                        <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="col-lg-12 login-title">
+                                                    Iniciar Sesión
+                                                </div>
+                                                <div class="col-lg-12 login-form">
+                                                    <div class="col-lg-12 login-form">
+                                                        <form th:action="@{/login}" method="post" name="login">
+                                                            <div th:if="${error != null}" th:text="${error}" style="color: red;"></div>
+                                                            <div class="form-group">
+                                                                <label class="form-control-label">Nombre de Usuario</label>
+                                                                <input type="text" name="username" class="form-control" id="email" aria-describedby="emailHelp" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="form-control-label">Contraseña</label>
+                                                                <input type="password" class="form-control" name="password" id="password" aria-describedby="emailHelp" required>
+                                                            </div>
+
+                                                            <div class="col-lg-12 loginbttm">
+                                                                <div class="col-lg-6 login-btm login-button">
+                                                                    <button type="submit" class="btn btn-outline-success">Ingresar</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="rg-btm" role="alert" style="color: azure;">
+                                                                ¿Aun no tienes una cuenta? 
+                                                                <a th:href="@{/usuarios/registro}" type="button" class="btn" style="color:royalblue;">Registrarse</a>.
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-2"></div>
+                                            </div>
+                                        </div>
+                                </body>
+                                </html>
